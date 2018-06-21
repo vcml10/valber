@@ -2,6 +2,12 @@
 
 > Selling things in a fancy way
 
+## Contains
+
+* Bulma
+* Buefy
+* Specific color palette from [coolors.co](http://coolors.co/b8d8d8-7a9e9f-4f6367-eef5db-fe5f55)
+
 ## Build Setup
 
 ``` bash
