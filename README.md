@@ -1,6 +1,6 @@
-# minhas-coisas
+# vuejs-base
 
-> Selling things in a fancy way
+> Basic vuejs project
 
 ## Contains
 
