@@ -1,0 +1,39 @@
+// app.scss
+
+@import "~bulma/sass/utilities/_all";
+@import url('https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css');
+
+
+// main colors
+$light: rgba(175, 184, 185, 1);
+$light-invert: findColorInvert($light);
+$dark: rgba(36, 45, 47, 1);
+$dark-invert: findColorInvert($dark);
+
+$primary: rgba(79, 99, 103, 1);
+$primary-invert: findColorInvert($primary);
+$info: rgba(184, 216, 216, 1);
+$info-invert: findColorInvert($info);
+$warning: rgba(238, 245, 219, 1);
+$warning-invert: findColorInvert($warning);
+$danger: rgba(254, 95, 85, 1);
+$danger-invert: findColorInvert($danger);
+
+$columbia: rgba(122, 158, 159, 1);
+$columbia-invert: findColorInvert($columbia);
+
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "columbia": ($columbia, $columbia-invert)
+);
+
+@import '~bulma';
+@import "~buefy/src/scss/buefy";
