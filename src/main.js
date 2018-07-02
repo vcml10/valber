@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// Vuex things
+import { store } from './store'
+
 // Bulma and Buefy - Theme
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
@@ -20,6 +23,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
