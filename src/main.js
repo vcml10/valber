@@ -1,11 +1,15 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import { initializeApp } from 'firebase'
+
+// App things
 import App from './App'
 import router from './router'
 
-// Vuex things
+// Local variables
 import { store } from './store'
+import { config } from './helpers/firebaseConfig'
 
 // Bulma and Buefy - Theme
 import Buefy from 'buefy'
@@ -25,5 +29,8 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  created () {
+    initializeApp(config)
+  }
 })
