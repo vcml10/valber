@@ -5,11 +5,15 @@ import { database } from 'firebase'
 // local modules
 import base from './modules/base'
 
+// external modules
+import auth from '@/components/Auth/store/auth'
+
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   modules: {
-    base
+    base,
+    auth
   },
 
   state: {
