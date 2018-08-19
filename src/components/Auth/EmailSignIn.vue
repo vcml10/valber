@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h4 class="title is-4 has-text-centered has-text-weight-light">Usuário e senha</h4>
+    <h4 class="title is-4 has-text-centered has-text-weight-light has-text-dark">Usuário e senha</h4>
 
     <form @submit="userSignIn">
 

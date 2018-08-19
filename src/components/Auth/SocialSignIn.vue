@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h4 class="title is-4 has-text-centered has-text-weight-light">Redes Sociais</h4>
+    <h4 class="title is-4 has-text-centered has-text-weight-light has-text-dark">Redes Sociais</h4>
 
     <a href="#" @click.prevent="userSignInWithGoogle" class="button is-fullwidth is-google">
       <span class="icon">
