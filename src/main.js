@@ -7,6 +7,9 @@ import { initializeApp } from 'firebase'
 import App from './App'
 import router from './router'
 
+// Global components
+import MainMenu from '@/components/Global/MainMenu.vue'
+
 // Local variables
 import { store } from './store'
 import { config } from './helpers/firebaseConfig'
@@ -20,6 +23,9 @@ Vue.use(Buefy)
 require('./assets/sass/app.scss')
 require('./assets/css/index.css')
 require('./assets/css/login.css')
+
+// Using local components
+Vue.component('main-menu', MainMenu)
 
 Vue.config.productionTip = false
 
