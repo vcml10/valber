@@ -16,7 +16,7 @@ import { config } from './helpers/firebaseConfig'
 
 // Bulma and Buefy - Theme
 import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
+import 'buefy/dist/buefy.css'
 Vue.use(Buefy)
 
 // Local styles and colors

@@ -43,7 +43,7 @@ export default {
       this.$store.dispatch('userSignIn', { email: this.email, password: this.password })
     },
     showError: function () {
-      this.$toast.open(error)
+      this.$toast.open(this.error)
     }
   },
   computed: {
