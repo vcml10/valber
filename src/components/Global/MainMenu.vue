@@ -16,6 +16,9 @@
         <router-link class="navbar-item" :to="{ name: 'index' }">
           Página Inicial
         </router-link>
+        <router-link class="navbar-item" :to="{ name: 'sensors' }">
+          Sensores disponíveis
+        </router-link>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">
             Base

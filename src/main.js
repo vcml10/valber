@@ -9,6 +9,8 @@ import router from './router'
 
 // Global components
 import MainMenu from '@/components/Global/MainMenu.vue'
+import Tile from '@/components/Global/Tile.vue'
+import Sensor from '@/components/Global/Sensor.vue'
 
 // Local variables
 import { store } from './store'
@@ -26,6 +28,8 @@ require('./assets/css/login.css')
 
 // Using local components
 Vue.component('main-menu', MainMenu)
+Vue.component('tile', Tile)
+Vue.component('sensor', Sensor)
 
 Vue.config.productionTip = false
 
