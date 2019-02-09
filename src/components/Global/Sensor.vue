@@ -37,6 +37,7 @@ export default {
         5: 'weather-pouring',
         9: 'temperature-celsius',
         13: 'temperature-celsius',
+        17: 'flash',
         18: 'weather-windy',
         19: '',
         20: 'weather-windy',
