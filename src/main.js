@@ -12,6 +12,9 @@ import MainMenu from '@/components/Global/MainMenu.vue'
 import Tile from '@/components/Global/Tile.vue'
 import Sensor from '@/components/Global/Sensor.vue'
 
+// Stations components
+import StationsByCity from '@/components/Stations/StationsByCity.vue'
+
 // Local variables
 import { store } from './store'
 import { config } from './helpers/firebaseConfig'
@@ -30,6 +33,7 @@ require('./assets/css/login.css')
 Vue.component('main-menu', MainMenu)
 Vue.component('tile', Tile)
 Vue.component('sensor', Sensor)
+Vue.component('stations-by-city', StationsByCity)
 
 Vue.config.productionTip = false
 

@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import { database } from 'firebase'
 
 // local modules
+import stations from './modules/stations'
 import sensors from './modules/sensors'
 
 // external modules
@@ -12,6 +13,7 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   modules: {
+    stations,
     sensors,
     auth
   },
