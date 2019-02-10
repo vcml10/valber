@@ -1,5 +1,5 @@
 <template>
-  <div id="index">
+  <div id="sensors">
     <div class="container">
       <div class="columns is-multiline is-variable is-2">
         <div class="column is-2" v-for="(sensor, index) in sensors" :key=index>
@@ -40,7 +40,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#index {
+#sensors {
   margin-top: 80px;
 }
 </style>
