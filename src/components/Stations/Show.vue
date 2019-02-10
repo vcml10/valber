@@ -2,10 +2,17 @@
   <div id="station">
     <div class="container">
       <p class="title">Estação {{ station.nome }}</p>
-      <p class="is-small">Código: {{ station.codigo_origem }} </p>
+      <p class="is-small" v-if="station.codigo_origem">Código: {{ station.codigo_origem }} </p>
       <p class="is-small">Tipo da estação: {{ station.tipo_estacao.descricao }} </p>
-      <p class="is-small">Sensores disponíveis:
-      <span class="" v-for="(s, index) in station.sensor" :key="index">{{ s.descricao }} ({{ s.unidade }}), </span>
+      <p class="is-small" v-if="station.sensor">Sensores disponíveis:
+      <span class="" v-for="(s, index) in station.sensor" :key="index">
+        <span v-if="index === station.sensor.length - 1">
+          {{ s.descricao }} ({{ s.unidade }}).
+        </span>
+        <span v-else>
+          {{ s.descricao }} ({{ s.unidade }}),
+        </span>
+      </span>
       </p>
       {{ station }}
       <div class="columns is-multiline is-variable is-2">
