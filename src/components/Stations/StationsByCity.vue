@@ -12,15 +12,26 @@
           <template slot="empty">Nenhuma cidade encontrada</template>
         </b-autocomplete>
       </b-field>
-      <p v-if="selected">Estações</p>
-      <div v-for="(station, index) in paginatedItems" :key=index>
-        <p>{{ station.nome }}</p>
-      </div>
-      <b-pagination
+      <p class="subtitle" v-if="selected">Estações</p>
+      <div class="content">
+        <ol type="1">
+          <li v-for="(station, index) in paginatedItems" :key=index>
+            <router-link
+              :to="{ name: 'station', params: {codigo: station.codigo, estado: station.municipio.uf, cidade: station.municipio.nome }}">
+              {{ station.nome }}
+            </router-link>
+              ({{ station.tipo_estacao.descricao }})
+            <ol type="a" style="margin-top: 0;margin-bottom:0.5em">
+              <li v-if="station.localizacao">Localização: {{ station.localizacao }}</li>
+            </ol>
+          </li>
+        </ol>
+     </div>  <!-- /content -->
+     <b-pagination
         :total="stationsByCity.length"
         :current.sync="current"
         :per-page="perPage">
-        </b-pagination>
+      </b-pagination>
     </article> <!-- /article -->
   </div>
 </template>
@@ -31,6 +42,7 @@ export default {
   data () {
     return {
       data: this.cities,
+      station: '',
       name: '',
       selected: null,
       current: 1,
