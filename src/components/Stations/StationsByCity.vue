@@ -26,6 +26,7 @@
             </ol>
           </li>
         </ol>
+        <b-loading :is-full-page="fullpage" :active.sync="loading" :can-cancel="true"></b-loading>
      </div>  <!-- /content -->
      <b-pagination
         :total="stationsByCity.length"
@@ -46,7 +47,8 @@ export default {
       name: '',
       selected: null,
       current: 1,
-      perPage: 5
+      perPage: 5,
+      fullpage: false
     }
   },
   beforeCreate () {
