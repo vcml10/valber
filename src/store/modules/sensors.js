@@ -32,6 +32,18 @@ const actions = {
       .finally(() => {
         commit('setLoading', false)
       })
+  },
+  getDataSensor ({commit, state}, payload) {
+    commit('setLoading', true)
+    // request data sensor
+    var objs = []
+    let url = 'http://api.funceme.br/rest/pcd/dado-sensor?' +
+      'data=' + payload.data.toString() +
+      '&estacao.codigo=' + payload.estacao.codigo.toString() +
+      '&sensor.codigo=' + payload.sensor.codigo.toString() +
+      '&orderBy=data,DESC'
+    console.log(objs)
+    console.log(url)
   }
 }
 

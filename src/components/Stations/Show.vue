@@ -14,19 +14,31 @@
         </span>
       </span>
       </p>
-      {{ station }}
-      <div class="columns is-multiline is-variable is-2">
+      <div class="tile is-ancestor" style="margin-top:20px;">
+        <input-range
+          v-model="finalDate"
+          v-on:hour-changed="updatedTime" />
+        {{ finalDate }}
       </div>
     </div> <!-- /container -->
+    {{ station }}
   </div>
 </template>
 
 <script>
+import InputRange from './InputRange.vue'
+
 export default {
   name: 'Index',
+  components: {
+    'input-range': InputRange
+  },
   data () {
     return {
-      payload: {}
+      finalDate: '',
+      payload: {},
+      queryObj: {},
+      flag: 0
     }
   },
   beforeCreate () {
@@ -36,6 +48,12 @@ export default {
     this.payload['estado'] = this.$route.params.estado
     this.payload['cidade'] = this.$route.params.cidade
     this.$store.dispatch('getStationByCode', this.payload)
+  },
+  methods: {
+    updatedTime: function (finalDate) {
+      this.flag = finalDate
+      this.queryObj['data'] = finalDate
+    }
   },
   computed: {
     station () {
@@ -49,6 +67,13 @@ export default {
     },
     errorMsg () {
       return this.$store.state.stations.errorMsg
+    }
+  },
+  watch: {
+    flag: function () {
+      this.queryObj['estacao.codigo'] = this.station.codigo
+      this.queryObj['sensor'] = this.station.sensor
+      console.log(this.queryObj)
     }
   }
 }
