@@ -21,17 +21,25 @@
         {{ finalDate }}
       </div>
     </div> <!-- /container -->
-    {{ station }}
+    <div class="container">
+      <div class="columns is-multiline is-variable is-2">
+        <div class="column is-2" v-for="(s, index) in station.sensor" :key=index>
+          <sensor-data :s=s :payload="queryObj" />
+        </div>
+      </div>
+    </div> <!-- /container -->
   </div>
 </template>
 
 <script>
 import InputRange from './InputRange.vue'
+import SensorData from './SensorData.vue'
 
 export default {
   name: 'Index',
   components: {
-    'input-range': InputRange
+    'input-range': InputRange,
+    'sensor-data': SensorData
   },
   data () {
     return {
@@ -71,8 +79,6 @@ export default {
   },
   watch: {
     flag: function () {
-      this.queryObj['estacao.codigo'] = this.station.codigo
-      this.queryObj['sensor'] = this.station.sensor
       console.log(this.queryObj)
     }
   }
