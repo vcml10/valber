@@ -1,7 +1,7 @@
 {
-  "name": "vuejs-base",
+  "name": "valber.io",
   "version": "1.0.0",
-  "description": "Selling things in a fancy way",
+  "description": "consuming API in a simple way",
   "author": "Vitor Carvalho <vitorcarvalhoml@gmail.com>",
   "private": true,
   "scripts": {
