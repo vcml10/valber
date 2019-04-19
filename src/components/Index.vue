@@ -5,9 +5,10 @@
         <stations-by-city />
       </div> <!-- /is-ancestor -->
       <div class="tile is-ancestor">
-        <tile code=1 />
-        <tile code=2 />
-        <tile code=3 />
+        <stations-by-sensor />
+      </div> <!-- /is-ancestor -->
+      <div class="tile is-ancestor">
+        <!-- <tile code=1 /> -->
       </div> <!-- /is-ancestor -->
     </div> <!-- /container -->
   </div>

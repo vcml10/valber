@@ -4,6 +4,7 @@ import axios from 'axios'
 const state = {
   cities: [],
   stationsByCity: [],
+  stationsBySensor: [],
   stationByCode: {},
   error: false,
   errorMessage: null,
@@ -79,6 +80,45 @@ const actions = {
       .finally(() => {
         commit('setLoading', false)
       })
+  },
+  getStationsBySensor ({commit, state}, payload) {
+    commit('setLoading', true)
+    // request stations by sensors
+    console.log(payload)
+    var objs = []
+    var tmps = []
+    let url = 'http://api.funceme.br/rest/pcd/estacao?limit=500&municipio.uf=CE'
+    axios.get(url)
+      .then(response => {
+        let tmp = response.data.list
+        console.log(response.data.list)
+
+        for (var k in tmp) {
+          if (tmp[k]['sensor'] === undefined) {
+            continue
+          } else if (tmp[k]['sensor'].length === 0) {
+            continue
+          } else {
+            for (var j in tmp[k]['sensor']) {
+              if (payload.includes(tmp[k]['sensor'][j]['codigo'])) {
+                tmps.push(tmp[k])
+                continue
+              }
+            }
+          }
+        }
+
+        var objs = [...new Set(tmps)]
+        commit('setStationsBySensor', objs)
+      })
+      .catch(error => {
+        console.log('error:', error.toString())
+        commit('setError', true)
+        commit('setErrorMessae', error.toString().split(':')[1])
+      })
+      .finally(() => {
+        commit('setLoading', false)
+      })
   }
 }
 
@@ -92,6 +132,9 @@ const mutations = {
   },
   setStationByCode (state, payload) {
     state.stationByCode = payload
+  },
+  setStationsBySensor (state, payload) {
+    state.stationsBySensor = payload
   },
   setLoading (state, payload) {
     state.loading = payload

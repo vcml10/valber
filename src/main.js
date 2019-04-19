@@ -14,6 +14,7 @@ import Sensor from '@/components/Global/Sensor.vue'
 
 // Stations components
 import StationsByCity from '@/components/Stations/StationsByCity.vue'
+import StationsBySensor from '@/components/Stations/StationsBySensor.vue'
 
 // Local variables
 import { store } from './store'
@@ -34,6 +35,7 @@ Vue.component('main-menu', MainMenu)
 Vue.component('tile', Tile)
 Vue.component('sensor', Sensor)
 Vue.component('stations-by-city', StationsByCity)
+Vue.component('stations-by-sensor', StationsBySensor)
 
 Vue.config.productionTip = false
 
