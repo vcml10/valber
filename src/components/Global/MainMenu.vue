@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar is-fixed-top is-transparent">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#">
-        <span>Logo</span>
-      </a>
+      <p class="navbar-item">
+        <span>valber.io</span>
+      </p>
       <div class="navbar-burger burger" data-target="menu">
         <span></span>
         <span></span>
@@ -19,28 +19,9 @@
         <router-link class="navbar-item" :to="{ name: 'sensors' }">
           Sensores disponíveis
         </router-link>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">
-            Base
-          </a>
-          <div class="navbar-dropdown is-boxed">
-            <a class="navbar-item" href="#">
-              Link 1
-            </a>
-            <a class="navbar-item" href="#">
-              Link 2
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item" href="#">
-              Link 3
-            </a>
-            <a class="navbar-item" href="#">
-              Link 4
-            </a>
-          </div>
-        </div>
       </div>
 
+      <!--
     <div class="navbar-end">
       <div class="navbar-item">
 
@@ -54,9 +35,10 @@
               <span>Login</span>
             </router-link>
           </p>
-        </div> <!-- /field -->
-      </div> <!-- /navbar-item -->
-    </div> <!-- /navbar-end -->
+        </div>
+      </div>
+    </div>
+    -->
     </div> <!-- /navbar-menu -->
 </nav>
 </template>
