@@ -1,0 +1,20 @@
+/* signin page */
+
+.is-google {
+  border: 1px solid #DD4B39;
+  background: #DD4B38;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.is-facebook {
+  border: 1px solid #3B5998;
+  background: #3B5997;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.is-twitter {
+  border: 1px solid #55ACEE;
+  background: #55ACED;
+  color: #fff;
+  margin-bottom: 10px;
+}
