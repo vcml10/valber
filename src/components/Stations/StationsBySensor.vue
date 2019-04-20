@@ -7,7 +7,7 @@
           <div class="column is-2" v-for="(sensor, index) in sensors" :key=index>
             <b-checkbox v-model="sensorsGroup"
                         :native-value="sensor.codigo">
-              {{ sensor.descricao }}
+              {{ sensor.descricao }} (código: {{ sensor.codigo }})
             </b-checkbox>
           </div>
         </div>
@@ -20,7 +20,7 @@
               :to="{ name: 'station', params: {codigo: station.codigo, estado: station.municipio.uf, cidade: station.municipio.nome }}">
               {{ station.nome }}
             </router-link>
-              ({{ station.tipo_estacao.descricao }})
+              ({{ station.tipo_estacao.descricao }} - código: {{ station.codigo }})
             <ol type="a" style="margin-top: 0;margin-bottom:0.5em">
               <li v-if="station.localizacao">Localização: {{ station.localizacao }}</li>
             </ol>
