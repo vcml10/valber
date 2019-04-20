@@ -85,7 +85,6 @@ const actions = {
     commit('setLoading', true)
     // request stations by sensors
     console.log(payload)
-    var objs = []
     var tmps = []
     let url = 'http://api.funceme.br/rest/pcd/estacao?limit=500&municipio.uf=CE'
     axios.get(url)
