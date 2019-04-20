@@ -1,6 +1,6 @@
 {
   "name": "valber.io",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "consuming API in a simple way",
   "author": "Vitor Carvalho <vitorcarvalhoml@gmail.com>",
   "private": true,

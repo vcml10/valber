@@ -90,6 +90,7 @@ const actions = {
     axios.get(url)
       .then(response => {
         let tmp = response.data.list
+        var aux = []
         console.log(response.data.list)
 
         for (var k in tmp) {
@@ -99,11 +100,13 @@ const actions = {
             continue
           } else {
             for (var j in tmp[k]['sensor']) {
-              if (payload.includes(tmp[k]['sensor'][j]['codigo'])) {
-                tmps.push(tmp[k])
-                continue
-              }
+              aux.push(tmp[k]['sensor'][j]['codigo'])
             }
+            var isSuperset = payload.every(function (val) { return aux.indexOf(val) >= 0 })
+            if (isSuperset) {
+              tmps.push(tmp[k])
+            }
+            aux = []
           }
         }
 
